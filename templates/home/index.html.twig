@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+    <div class="container p-3 alert">
+        {% if datas is not null %}
+        <div class="articleBox row justify-content-center">
+            {% for data in datas %}
+                <div class="article col-12 col-sm-6 d-flex flex-column" style="max-width:400px">
+                    <img src="{{data.imageUrl}}" alt="" height="200px" style="object-fit: cover">
+                    <div class="details p-2 shadow mb-5">
+                        <h3> {{data.title}} </h3>
+                        <hr>
+                        <p>{{data.description}}</p>
+                        <hr>
+                        <div class="d-flex justify-content-between text-center"><h4>{{data.price}} €</h4> <a href="#" class="btn btn-success">See</a></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% else %}
+            <h4>Empty data !</h4>
+        {% endif %}
+    </div>
+{% endblock %}

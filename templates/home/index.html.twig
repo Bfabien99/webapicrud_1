@@ -9,15 +9,15 @@
 </style>
 
     <div class="container p-3 alert">
-        {% if datas is not null %}
+        {% if datas %}
         <div class="articleBox row justify-content-center">
             {% for data in datas %}
                 <div class="article col-12 col-sm-6 d-flex flex-column" style="max-width:400px">
-                    <img src="{{data.imageUrl}}" alt="" height="200px" style="object-fit: cover">
-                    <div class="details p-2 shadow mb-5">
+                    <img src="{{data.imageUrl}}" alt="" class="border border-secondary" height="200px" style="object-fit: cover;">
+                    <div class="details shadow mb-5 p-2">
                         <h3> {{data.title}} </h3>
                         <hr>
-                        <p>{{data.description}}</p>
+                        <p class="description">{{data.description | slice(0, 200) | nl2br }}</p>
                         <hr>
                         <div class="d-flex justify-content-between text-center"><h4>{{data.price}} €</h4> <a href="/show/{{ data.id}}" class="btn btn-success">See</a></div>
                     </div>

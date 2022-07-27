@@ -29,7 +29,6 @@ class HomeController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            dd($form->getData());
             $postData = $CallApiService->postData($form->getData());
             $datas = $postData;
             

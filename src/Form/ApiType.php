@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ApiType extends AbstractType
 {
@@ -24,7 +25,7 @@ class ApiType extends AbstractType
                     'placeholder' => 'Enter title...'
                 )
             ])
-            ->add('description', TextType::class, [
+            ->add('description', TextareaType::class, [
                 'attr' => array(
                     'class' => 'form-control',
                     'placeholder' => 'Enter description...'

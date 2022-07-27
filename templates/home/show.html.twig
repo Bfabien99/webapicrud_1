@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product
+{% endblock %}
+{% block body %}
+    <div class="content" style="">
+        <div class="details row">
+            <div class="col-12 col-sm-6">
+                <img src="{{ data.imageUrl }}" alt="" style="max-width: 100%;">
+                <h4>{{ data.price }} €</h4>
+            </div>
+      
+            <div class="col-12 col-sm-6">
+            <h2>{{ data.title }}</h2>
+            <p>{{ data.description }}</p>
+            </div>
+        </div>
+
+        <div class="button my-0 mx-auto" style="with:200px"><a href="/delete/{{ data.id }}" class="btn btn-danger">Del</a> <a href="/edit/{{ data.id }}" class="btn btn-primary">Mod</a></div>
+    </div>
+
+{% endblock %}

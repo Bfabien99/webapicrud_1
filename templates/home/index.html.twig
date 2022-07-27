@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
 <style>
@@ -19,7 +19,7 @@
                         <hr>
                         <p>{{data.description}}</p>
                         <hr>
-                        <div class="d-flex justify-content-between text-center"><h4>{{data.price}} €</h4> <a href="#" class="btn btn-success">See</a></div>
+                        <div class="d-flex justify-content-between text-center"><h4>{{data.price}} €</h4> <a href="/show/{{ data.id}}" class="btn btn-success">See</a></div>
                     </div>
                 </div>
             {% endfor %}
